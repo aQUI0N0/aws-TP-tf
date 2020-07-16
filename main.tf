@@ -30,6 +30,15 @@ resource "aws_subnet" "public-c" {
   }
 }
 
+resource "aws_subnet" "public-d" {
+  vpc_id     = aws_vpc.default.id
+  cidr_block = "10.0.6.0/24"
+
+  tags = {
+    Name = "public-d-tf"
+  }
+}
+
 resource "aws_subnet" "private-a" {
   vpc_id     = aws_vpc.default.id
   cidr_block = "10.0.3.0/24"
